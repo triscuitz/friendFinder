@@ -1,0 +1,26 @@
+body {
+  background-color: #7BD3F9;
+}
+
+#titleJumbo {
+  background-color: #7BD3F9;
+  text-align: center;
+}
+
+#siteBody {
+  text-align: center;
+}
+
+#titleText {
+  color: white;
+}
+
+.title {
+  font-family: 'Pacifico', cursive;
+  font-size: 80px;
+  text-align: center;
+}
+
+#friendSurvey {
+  color: white;
+}
