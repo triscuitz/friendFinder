@@ -27,10 +27,10 @@ module.exports = function(app) {
         console.log(friends[i]);
         totalDiff = 0;
 
-        for (var z = 0; z < friends[i].survey[z]; z++) {
+        for (var j = 0; j < friends[i].survey[j]; j++) {
 
 
-        totalDiff += parseInt(userScore[z]) - parseInt(friends[i].survey[z]);
+        totalDiff += parseInt(userScore[j]) - parseInt(friends[i].survey[j]);
 
         if (totalDiff <= bestie.scoreDiff) {
             bestie.name = friends[i].name;

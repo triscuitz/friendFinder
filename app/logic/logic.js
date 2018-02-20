@@ -16,7 +16,7 @@ $(document).ready(function () {
         $("input[name='question8']:checked").val(),
         $("input[name='question9']:checked").val(),
         $("input[name='question10']:checked").val(),
-      ]
+      ],
     };
 
     console.log(userData);
