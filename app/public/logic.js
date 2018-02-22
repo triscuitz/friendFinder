@@ -34,8 +34,8 @@ $(document).ready(function () {
 //   alert('These questions were scientifically fomulated to pair you up with your Bestie! If you dont answer them all we here in the Bestie Unity Department - BUD for short, cant find you a new bestie!');
 // }
 
-    let url = '/api/friends';
-    // let url = '../data/friends.'
+    // let url = '/api/friends';
+    let url = '../data/friends.'
     let data = userData;
 
       fetch(url, {

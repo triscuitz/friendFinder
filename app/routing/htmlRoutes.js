@@ -3,7 +3,7 @@ const express = require('express');
 
 module.exports = function(app) {
 
-  app.use(express.static(path.join(__dirname + "../logic")));
+  app.use(express.static(path.join(__dirname,  "../logic")));
 
   app.get("/style.css", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/style.css"));
