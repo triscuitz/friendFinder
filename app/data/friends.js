@@ -1,4 +1,4 @@
-let friendArray = [
+let friendsArray = [
   {
     name: 'Finn',
     photo: 'https://raw.githubusercontent.com/triscuitz/friendFinder/master/app/public/images/finn.png',
@@ -52,7 +52,7 @@ let friendArray = [
   {
     name: 'Han',
     photo: 'https://raw.githubusercontent.com/triscuitz/friendFinder/master/app/public/images/han.png',
-    survey: [1,1,5,5,5,2,3,4,5,1,],
+    survey: [1,1,5,5,5,2,3,4,5,1],
   },
   {
     name: 'Nien',
@@ -62,8 +62,8 @@ let friendArray = [
   {
     name: 'Ezra',
     photo: 'https://raw.githubusercontent.com/triscuitz/friendFinder/master/app/public/images/ezra.png',
-    survey: [5,5,5,5,5,5,4,3,2,5,]
+    survey: [5,5,5,5,5,5,4,3,2,5,],
   },
 ];
 
-module.exports = friendArray;
+module.exports = friendsArray;

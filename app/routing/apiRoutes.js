@@ -1,47 +1,45 @@
 let friends = require('../data/friends.js');
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
 module.exports = function(app) {
 
-  app.get('/api/friends', function(req,res){
-    res.json(friends);
-  });
+  app.get('/api/friends', function(req, res) {
+		res.json(friends);
+	});
 
-  app.post('/api/friends', function(req, res){
+	app.post('/api/friends', function(req, res) {
 
-      let bestie = {
-        name: '',
-        photo: '',
-        scoreDiff: 1000
-      };
+		let match = {
+			name: '',
+			photo: '',
+			difference: 1000
+		};
 
-      console.log(req.body);
+	   let userData = req.body;
+	   let userScore = userData.survey.reduce(reducer);
 
-      let userData = req.body;
-      let userScore = userData.survey;
+     console.log('userScore: ',userScore);
 
-      console.log(userScore);
+	   let totalDifference = 0;
 
-      let totalDiff = 0;
+	   for (var i = 0; i < friends.length; i++) {
 
-      for (var i = 0; i < friends.length; i++) {
-        console.log(friends[i]);
-        totalDiff = 0;
+	      for (var j = 0; j < friends[i].survey[j]; j++) {
 
-        for (var j = 0; j < friends[i].survey[j]; j++) {
+		      totalDifference += Math.abs(userScore - parseInt(friends[i].survey[j]));
 
+            console.log('totalDiff: ', totalDifference);
 
-        totalDiff += parseInt(userScore[j]) - parseInt(friends[i].survey[j]);
-
-        if (totalDiff <= bestie.scoreDiff) {
-            bestie.name = friends[i].name;
-            bestie.photo = friends[i].photo;
-            bestie.scoreDiff = totalDiff;
-          }
-        }
+		       if (totalDifference <= match.difference) {
+			          match.name = friends[i].name;
+			          match.photo = friends[i].photo;
+			          match.difference = totalDifference;
+		            }
+	         }
       }
-      friends.push(userData);
+		friends.push(userData);
 
-      res.json(bestie);
-  });
+	res.json(match);
 
+	});
 };
